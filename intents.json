@@ -1,0 +1,73 @@
+{"intents": [
+        {"tag": "nothing",
+         "patterns": [" "],
+         "responses": ["Sorry, can't understand you.", "Please give me more info.", "Not sure I understand."],
+         "context": [""]
+        },
+        {"tag": "greeting",
+         "patterns": ["Hi there", "How are you", "Anyone there?", "Hey", "Hola", "Hello", "Good day"],
+         "responses": ["Hello!", "Hi.", "Greetings.", "Good to see you!"],
+         "context": [""]
+        },
+        {"tag": "goodbye",
+         "patterns": ["Bye", "See you later", "Goodbye", "Nice chatting, bye", "Till next time"],
+         "responses": ["See you!", "Have a nice day.", "Bye! Come back again soon."],
+         "context": [""]
+        },
+        {"tag": "thanks",
+         "patterns": ["Thanks", "Thank", "That's helpful", "Awesome, thanks"],
+         "responses": ["Happy to help!", "Any time!", "My pleasure."],
+         "context": [""]
+        },
+        {"tag": "service",
+         "patterns": ["What can you do?", "How can you help?", "What resources?", "What do you do?"],
+         "responses": ["I can help you find COVID testing in your area and provide limited medical advice."],
+         "context": [""]
+        },
+        {"tag": "affirm",
+         "patterns": ["Yes", "Yeah", "Indeed", "Yep", "Please", "Ready now", "Ready"],
+         "responses": ["Great. Please respond by repeating the options that apply.\n\nBot: Are you experiencing a breathing problem, a dry cough, and/or a sore throat?"],
+         "context": ["breathing_cough_sore"]
+        },
+        {"tag": "no",
+         "patterns": ["Not ready yet", "Not yet", "No", "Nope", "Don't think so"],
+         "responses": ["Alright. Just let me know when you are ready.", "Okay, I'm ready when you are.", "Okay. No rush."],
+         "context": ["affirm"]
+        },
+        {"tag": "breathing_cough_sore",
+         "patterns": ["Breathing problem", "Dry cough", "Sore throat"],
+         "responses": ["Do you have fatigue and/or a headache?"],
+         "context": ["fatigue_headache"]
+        },
+        {"tag": "fatigue_headache",
+         "patterns": ["Fatigue", "Headache", "Tired"],
+         "responses": ["Is your nose running and/or do you have a fever?"],
+         "context": ["nose_fever"]
+        },
+        {"tag": "nose_fever",
+         "patterns": ["Nose running", "Fever", "Sniffles"],
+         "responses": ["Do you have diabetes, chronic lung disease, heart disease, and/or asthma?"],
+         "context": ["previous_condition"]
+        },
+        {"tag": "previous_condition",
+         "patterns": ["Diabetes", "Diabetic", "Chronic lung", "Heart", "Asthma"],
+         "responses": ["Have you travelled abroad, attended a large gathering, or visited public exposed places in the past week?"],
+         "context": ["activity"]
+        },
+        {"tag": "activity",
+         "patterns": ["Travelled abroad", "Attended large gathering", "Visited public exposed places", "Travel", "Abroad", "Public", "Places"],
+         "responses": ["Have you worn a facemask or you have had an uncovered mouth around others in the past week?"],
+         "context": ["masks"]
+        },
+        {"tag": "masks",
+         "patterns": ["Masks", "Mask", "Uncovered mouth", "Facemask", "Facemasks"],
+         "responses": ["Have you had contact with someone with COVID-19 in the past week or are you unaware of any contact?"],
+         "context": ["contact"]
+        },
+        {"tag": "contact",
+         "patterns": ["Contact", "Unaware", "Not had contact", "Aware"],
+         "responses": ["Thank you for your responses."],
+         "context": ["calculate"]
+        }
+   ]
+}
